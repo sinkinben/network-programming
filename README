@@ -1,0 +1,13 @@
+Unix Network Programming
+
+In this project, I wrote examples to show the basic usages of network programming
+API in unix systems.
+
+* basic - The basic usages of `connect, bind, listen, accept, send, recv`, it
+  shows the mode of Client/Server, which is One-To-Many (i.e. one server to 
+  multiple servers).
+* select - The programming pattern of IO multiplexing `select`.
+* poll - The programming pattern of IO multiplexing `poll`.
+* epoll - The programming pattern of IO multiplexing `epoll`.
+* multi-thread-server - An example of multi-threads server, one thread for one
+  client.
