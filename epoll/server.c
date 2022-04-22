@@ -10,7 +10,9 @@ int init_listen()
     listenfd = socket(AF_INET, SOCK_STREAM, 0);
     assert(listenfd != -1);
 
-    /* set non-blocking listenfd */
+    /* set non-blocking listenfd, calling 
+     * socket(AF_INET, SOCK_STREAM | SOCK_NONBLOCK, 0) has the same effect.
+     */
     int flags = fcntl(listenfd, F_GETFL, 0);
     fcntl(listenfd, F_SETFL, flags | O_NONBLOCK);
 
