@@ -1,0 +1,9 @@
+In this example,
+
+* The server send message to multiple clients via broadcast with diagram socket, 
+  i.e. UDP protocol.
+* In server, to enable broadcast ability of socket (defualt is disable), we need
+  to call `setsockopt` to set the flag `SO_BROADCAST = 1` of `sockfd`.
+* In clients, multiple clients should wait (listen) on same `BROADCAST_PORT`,
+  we need to call `setsockopt` to set `SO_REUSEADDR = 1` of `sockfd`. So multiple
+  different `sockfd` can be bound to same port (i.e. same address).
